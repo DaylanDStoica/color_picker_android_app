@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/GreenTextNumber"
+        android:layout_width="63dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/GreenSwitch"
+        app:layout_constraintEnd_toEndOf="@+id/BlueTextNumber"
+        app:layout_constraintStart_toStartOf="@+id/BlueTextNumber"
+        app:layout_constraintTop_toTopOf="@+id/GreenSwitch" />
+
+    <EditText
+        android:id="@+id/BlueTextNumber"
+        android:layout_width="63dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/BlueSwitch"
+        app:layout_constraintStart_toEndOf="@+id/BlueSwitch"
+        app:layout_constraintTop_toTopOf="@+id/BlueSwitch" />
+
+    <SeekBar
+        android:id="@+id/GreenSeekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:max="255"
+        android:min="0"
+        android:progress="0"
+        app:layout_constraintBottom_toBottomOf="@+id/GreenSwitch"
+        app:layout_constraintEnd_toStartOf="@+id/GreenSwitch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/GreenSwitch" />
+
+    <SeekBar
+        android:id="@+id/BlueSeekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:max="255"
+        android:min="0"
+        android:progress="0"
+        app:layout_constraintBottom_toBottomOf="@+id/BlueSwitch"
+        app:layout_constraintEnd_toStartOf="@+id/BlueSwitch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/BlueSwitch" />
+
+    <Switch
+        android:id="@+id/RedSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:minHeight="48dp"
+        android:text="Red"
+        android:textColor="#ff0000"
+        app:layout_constraintBottom_toTopOf="@+id/GreenSwitch"
+        app:layout_constraintEnd_toEndOf="@+id/GreenSwitch"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/GreenSwitch" />
+
+    <Switch
+        android:id="@+id/BlueSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginBottom="140dp"
+        android:minHeight="48dp"
+        android:text="Blue"
+        android:textColor="#0000ff"
+        app:layout_constraintBottom_toTopOf="@+id/ResetButton"
+        app:layout_constraintStart_toStartOf="@+id/ResetButton" />
+
+    <Switch
+        android:id="@+id/GreenSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:minHeight="48dp"
+        android:text="Green"
+        android:textColor="#00ff00"
+        app:layout_constraintBottom_toTopOf="@+id/BlueSwitch"
+        app:layout_constraintEnd_toEndOf="@+id/BlueSwitch"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/BlueSwitch" />
+
+    <Button
+        android:id="@+id/ResetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="RESET"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <SeekBar
+        android:id="@+id/RedSeekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:max="255"
+        android:min="0"
+        android:progress="0"
+        app:layout_constraintBottom_toBottomOf="@+id/RedSwitch"
+        app:layout_constraintEnd_toStartOf="@+id/RedSwitch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/RedSwitch" />
+
+    <EditText
+        android:id="@+id/RedTextNumber"
+        android:layout_width="63dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/RedSwitch"
+        app:layout_constraintEnd_toEndOf="@+id/GreenTextNumber"
+        app:layout_constraintStart_toStartOf="@+id/GreenTextNumber"
+        app:layout_constraintTop_toTopOf="@+id/RedSwitch" />
+
+    <View
+        android:id="@+id/ColorBox"
+        android:layout_width="368dp"
+        android:layout_height="289dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/white"
+        android:color="@color/white"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/RedSwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
