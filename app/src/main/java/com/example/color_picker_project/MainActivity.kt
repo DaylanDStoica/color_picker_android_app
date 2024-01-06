@@ -444,5 +444,23 @@ class MainActivity : AppCompatActivity() {
     // data store for activity
 }
 
+class ColorRow( colorName: String){
+    /* for each color row, will have 3 components
+    1. the Slider
+    2. the Switch for color disabling
+    3. the text box displaying the color value
 
+    allow access to the color value
+     */
+
+    //strings for finding the objects' id
+    private val sliderString  : String = colorName + "SeekBar"
+    private val switchString  : String = colorName + "Switch"
+    private val textBoxString : String = colorName + "TextBox"
+
+    // find the actual object by id
+//    val slider = findViewById(R.id.sliderString)
+//    val switch : Switch = findViewById(R.id.switchString)
+//    val textBox : EditText = findViewById(R.id.textBoxString)
+}
 
