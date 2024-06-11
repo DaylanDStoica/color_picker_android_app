@@ -61,8 +61,6 @@ class MainActivity : AppCompatActivity() {
 
         // detect when the sliders are touched
         // and update their integer values to the system
-//        TODO("get the sliders to recognize input so that we can get their values")
-
         // red slider listener, to get the progress
         redSlider.setOnSeekBarChangeListener( object : SeekBar.OnSeekBarChangeListener {
             val TAG_RED_SLIDER = "red slider listener"
@@ -280,16 +278,8 @@ class MainActivity : AppCompatActivity() {
             greenResetButton.isChecked = false
             blueResetButton.isChecked = false
             // reset the color integer values
-//            colorValueViewModel.resetColorValues()
             colorValueViewModel.resetAllValues()
             // reset the values within the text boxes
-
-//            redTextBox.text = colorValueViewModel.getRedValue().toString()
-//            blueTextBox.text = colorValueViewModel.getBlueValue().toString()
-//            greenTextBox.text = colorValueViewModel.getGreenValue().toString()
-//            redTextBox.setText( colorValueViewModel.getRedValue())
-//            blueTextBox.setText(colorValueViewModel.getBlueValue())
-//            greenTextBox.setText(colorValueViewModel.getGreenValue()
             redTextBox.setText("0")
             blueTextBox.setText("0")
             greenTextBox.setText("0")
@@ -301,15 +291,13 @@ class MainActivity : AppCompatActivity() {
 
             // reset the color displayed within the color box
             colorBox.setBackgroundColor(Color.parseColor("#000000"))
-//            setColorTextBoxIntegers()
-//            setColorWithinColorDisplayBox()
 
 
 
         }
 //        resetButton.performClick() // when this is not present, the ColorBox does not update upon startup
 
-        //workaround to fix a bug where, upon app statup, the sliders's progress is not read.
+        //workaround to fix a bug where, upon app startup, the sliders's progress is not read.
         // so flip each color's disableButton twice to restore, with persistence
         redResetButton.performClick()
         redResetButton.performClick()
@@ -322,61 +310,22 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    /*
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun convertNumbersToColor(): Color {
-//    fun convertNumbersToColor(): Int {
-        //return the Color for setting the Color sample box
-        Log.d(TAG, "getting the color from the convertNumbersToColor function")
-        val redValue = colorValueViewModel.getRedValue().toFloat()
-        val greenValue = colorValueViewModel.getGreenValue().toFloat()
-        val blueValue = colorValueViewModel.getBlueValue().toFloat()
-
-        Log.d(TAG, "color values retrieved")
-        //        val returnedColor = Color.rgb(redValue, greenValue, blueValue)
-        // return returnedColor
-        return Color.valueOf(redValue, greenValue, blueValue)
-    }
-
-     */
-
 //    fun setColorWithinColorDisplayBox( newBoxColor: Color ){
     @RequiresApi(Build.VERSION_CODES.O)
     fun setColorWithinColorDisplayBox(){
         // set the new displayed color within the display color box
-//        val newColor = this.convertNumbersToColor()
-//        colorBox.background = newColor
-//        colorBox = findViewById(R.id.ColorBox)
         Log.d(TAG, "attempting to generate color for the colorBox")
-//        val newColor = this.convertNumbersToColor()
-//        colorBox.color = newColor
-//        Log.d(LOG_TAG, "at set colorBox color,  the newColor is: $newColor")
-//        colorBox.setBackgroundColor(Color.parseColor(newColor))
-//        colorBox.setBackgroundColor(R.color.newColor)
-//        colorBox.background = newColor
-//        colorBox.setBackgroundColor(Color.parseColor(newColor))
-//        colorBox.setBackgroundColor( Int.toString())
 
         val redInt = colorValueViewModel.getRedValue().toInt()
         val blueInt = colorValueViewModel.getBlueValue().toInt()
         val greenInt = colorValueViewModel.getGreenValue().toInt()
 
-//        val newColor = Color.rgb( redInt, blueInt, greenInt)
         val newColor = Color.rgb( redInt, greenInt, blueInt)
 
         Log.d(TAG, "at set colorBox color, the newColor is: $newColor")
         colorBox.setBackgroundColor(newColor)
 
     }
-    /* //commented for preference of the convertNumbersToColor function above
-    fun getSliderValuesToRGB(){
-        //get all values of the different color sliders at once
-        val redValue = findViewById(R.id.RedSeekBar)
-        val greenValue = findViewById(R.id.GreenSeekBar)
-        val blueValue = findViewById(R.id.BlueSeekBar)
-    }
-    */
-
     //set the values of the RGB internal integers to the text boxes,
     // to the visible integers next to the screen sliders
     // Goal: keep the displayed RGB integers current
@@ -390,20 +339,7 @@ class MainActivity : AppCompatActivity() {
 
 
         // get integers from viewmodel, and divide by 255
-        /*
-        if ( colorName == "red") { redTextBox.setText( (colorValueViewModel.getRedValue()/255).toDouble().toString() ) }
-        if ( colorName == "green") { greenTextBox.setText( (colorValueViewModel.getGreenValue()/255).toDouble().toString() ) }
-        if ( colorName == "blue") { blueTextBox.setText(  (colorValueViewModel.getBlueValue()/255).toDouble().toString() ) }
-
-
-         */
         //get the double values from viewmodel
-        /*
-        if ( colorName == "red") { redTextBox.setText( (colorValueViewModel.getRedTextValue()).toString() ) }
-        if ( colorName == "green") { greenTextBox.setText( (colorValueViewModel.getGreenTextValue()).toString() ) }
-        if ( colorName == "blue") { blueTextBox.setText(  (colorValueViewModel.getBlueTextValue()).toString() ) }
-
-         */
     }
 
     //set the progress on the color sliders
@@ -437,10 +373,6 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "onPause begun")
     }
 
-//    override fun onSaveInstanceState(savedInstanceState: Bundle?) {
-//        super.onSaveInstanceState(savedInstanceState)
-//    }
-
     // data store for activity
 }
 
@@ -459,8 +391,5 @@ class ColorRow( colorName: String){
     private val textBoxString : String = colorName + "TextBox"
 
     // find the actual object by id
-//    val slider = findViewById(R.id.sliderString)
-//    val switch : Switch = findViewById(R.id.switchString)
-//    val textBox : EditText = findViewById(R.id.textBoxString)
 }
 
